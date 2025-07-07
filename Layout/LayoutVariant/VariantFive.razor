@@ -1,0 +1,78 @@
+@using MudBlazor.Services   
+ 
+<MudAppBar Elevation="0" Class="appbar-header" Fixed="false"> 
+    @* <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <MudIconButton class="appbar-menu" Icon="bi bi-list" Size="Size.Small" Edge="Edge.End" Color="Color.Inherit" />
+    </MudHidden>  *@
+    <MudElement HtmlTag="div" Class="appbar-pageheading">
+        <MudElement HtmlTag="a" href="/dashboard" Class="appbar-brand"> 
+            <MudAvatar Color="Color.Primary" Rounded="true" Class="appbar-brand-icon pa-2">
+                <MudImage ObjectFit="ObjectFit.Contain" Src="img/iconwhite.png" Alt="" />
+            </MudAvatar>  
+            <MudText Typo="Typo.h6" class="appbar-brand-text" Color="Color.Inherit">Empezar Digital <br/>Components</MudText>
+        </MudElement>
+    </MudElement>
+    <MudSpacer />
+    <MudElement HtmlTag="div" Class="searchbox">
+        <MudTextField @bind-Value="value" Variant="MudBlazor.Variant.Outlined" Margin="Margin.Dense" Placeholder="Search here" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Outlined.Search" InnerPadding="false"></MudTextField>
+    </MudElement>
+    <MudSpacer />
+    <MudElement HtmlTag="div" Class="appbar-right"> 
+        <MudIconButton DisableElevation="true" Variant="MudBlazor.Variant.Text" Icon="@Icons.Material.TwoTone.Notifications" Color="Color.Inherit"></MudIconButton>
+        <MudToggleIconButton  Variant="MudBlazor.Variant.Text" Icon="@Icons.Material.TwoTone.LightMode" Color="Color.Inherit" Toggled="@IsDarkMode"
+        ToggledChanged="SetDarkTheme" 
+        ToggledIcon="@Icons.Material.TwoTone.DarkMode" ToggledColor="Color.Inherit" />
+ 
+
+        <MudMenu class="account-user" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight" LockScroll='false' FullWidth="false" DropShadow="true" PopoverClass="appbar-dropdown">
+            <ActivatorContent>
+                <MudAvatar Color="Color.Secondary" Rounded="true"><MudText Typo="Typo.body1">DK</MudText></MudAvatar>
+                <MudElement HtmlTag="div" Class="account-user-inner">
+                    <MudText Typo="Typo.caption" class="account-subtitle">Welcome</MudText>
+                    <MudText Typo="Typo.subtitle2" class="account-title">Dominic Keller</MudText>
+                </MudElement>
+            </ActivatorContent>
+            <ChildContent>
+                <MudMenuItem Icon="@Icons.Material.Outlined.Person">Profile</MudMenuItem>
+                <MudMenuItem Icon="@Icons.Material.Outlined.AccountBox">Account</MudMenuItem>
+                <MudDivider />
+                <MudMenuItem Icon="@Icons.Material.Outlined.Logout" Href="/Login">Logout</MudMenuItem>
+            </ChildContent>
+        </MudMenu>
+    </MudElement>
+</MudAppBar> 
+
+<MudToolBar Class="toolbar"  >
+    <MudElement Class="toolbar-left"> 
+        <HorizontalNavMenu  /> 
+    </MudElement>
+    <MudSpacer />
+    <MudElement Class="toolbar-right">
+        <SectionOutlet SectionName="ActionButton" />
+    </MudElement>
+</MudToolBar>
+ 
+@code { 
+string value = null;
+
+@* -----MODE----- *@    
+[Parameter] public bool IsDarkMode { get; set; }
+[Parameter] public EventCallback<bool> IsDarkModeChanged { get; set; }
+
+
+private async Task SetDarkTheme(bool value)
+{
+    IsDarkMode = value;
+    await IsDarkModeChanged.InvokeAsync(value);
+}
+
+ 
+
+@* -----DRAWER----- *@
+[Parameter] public EventCallback OnToggleSettingsDrawer { get; set; }
+bool _drawerOpen = false;
+void DrawerToggle() { 
+    _drawerOpen = !_drawerOpen;  
+}
+  
+}

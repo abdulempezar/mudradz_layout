@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>MudRadApp</title>
+    <base href="/" />
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    
+    <link rel="stylesheet" href="css/app.css" /> 
+
+    <!-- MUDBLAZOR STYLE -->
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+
+    <!-- CUSTOMIZED STYLE -->
+    <link rel="stylesheet" href="css/mudRadzApp.css" /> 
+    <link rel="stylesheet" href="css/layouts.css" />
+    
+    <!-- PAGELOADER STYLE -->
+    <style> 
+        .pageloader {
+            height: 100vh; width: 100vw;
+            overflow: hidden; position: fixed;
+            display: flex; align-items: center; justify-content: center; flex-direction: column;
+            left: 0; right: 0; top: 0; bottom: 0;  
+        } 
+        .pageloader .pageloader-inner {position: relative; display: flex; align-items: center; justify-content: center;}   
+        .loading-progress { position: relative; display: block; width: 8rem; height: 8rem;}
+        .loading-progress circle { 
+            fill: #00000015; stroke: #e0e0e0; stroke-width: 0.5rem; transform-origin: 50% 50%; transform: rotate(-90deg);
+        }
+        .loading-progress circle:last-child {
+            stroke: #1b6ec2; stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+            transition: stroke-dasharray 0.05s ease-in-out;
+        }
+        .loading-progress-text {position: absolute; text-align: center; font-weight: 900; font-family: Roboto;}
+        .loading-progress-text:after { content: var(--blazor-load-percentage-text, "0%"); }
+         
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="pageloader">
+            <div class="pageloader-inner">
+                <svg class="loading-progress">
+                    <circle r="40%" cx="50%" cy="50%" />
+                    <circle r="40%" cx="50%" cy="50%" />
+                </svg>
+                <div class="loading-progress-text"></div>
+                <!-- <img src="img/icon.png" alt="" class="loader-icon"> -->
+            </div> 
+        </div>
+        
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+</body>
+</html>

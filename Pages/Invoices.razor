@@ -1,0 +1,162 @@
+﻿@page "/invoices"
+
+<PageTitle>Invoices</PageTitle>
+
+@*-- Variant Four --*@
+<SectionContent SectionName="TopArea">
+<MudElement HtmlTag="section" class="pageheading">
+    <MudStack Row="true" Wrap="Wrap.Wrap" Justify="Justify.SpaceBetween">
+        <MudStack Row="false" Spacing="1">
+            <MudText Typo="Typo.h3" class="page-title">Invoices</MudText>
+            <MudText Typo="Typo.caption" class="page-subtitle">view the new enhanced dashboard</MudText>
+        </MudStack>
+        <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center">
+            <MudButton StartIcon="@Icons.Material.Filled.Link" Variant="MudBlazor.Variant.Text" Color="Color.Surface">Ref Link</MudButton>
+            <MudButton StartIcon="@Icons.Material.Filled.Output" Variant="MudBlazor.Variant.Outlined" Color="Color.Surface">Export</MudButton>
+            <MudButton StartIcon="@Icons.Material.Filled.Add" Variant="MudBlazor.Variant.Filled" Color="Color.Primary">Create</MudButton>
+        </MudStack>
+    </MudStack>
+</MudElement>
+</SectionContent>
+
+@*-- Variant Five/Seven --*@
+<SectionContent SectionName="ActionButton">
+    <MudStack Row="true" AlignItems="MudBlazor.AlignItems.Center" Wrap="Wrap.Wrap">
+        <MudButton StartIcon="@Icons.Material.Filled.Link" Variant="MudBlazor.Variant.Text" Color="Color.Tertiary">Ref Link</MudButton>
+        <MudButton StartIcon="@Icons.Material.Filled.Output" Variant="MudBlazor.Variant.Outlined" Color="Color.Secondary">Export</MudButton>
+        <MudButton StartIcon="@Icons.Material.Filled.Add" Variant="MudBlazor.Variant.Filled" Color="Color.Primary">Create</MudButton>
+    </MudStack>
+</SectionContent>
+
+@*-- Variant Six/Seven --*@
+<SectionContent SectionName="PageHeadingTitle">
+    <MudElement HtmlTag="div" Class="appbar-pageheading">
+        <MudText Typo="Typo.h6" class="appbar-pagetitle">Invoices Statistics</MudText>
+        <MudBreadcrumbs Items="_items" Class="mud-typography-caption"></MudBreadcrumbs>
+    </MudElement>
+</SectionContent>
+ 
+
+<MudElement HtmlTag="section" class="BodyWrapper">
+    <MudGrid Spacing="5" Justify="Justify.Center">
+        <MudItem xs="12" lg="4">
+            <MudCard Elevation="25">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Invoices Card One</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="4">
+            <MudCard Elevation="25">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Invoices Card Two</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="4">
+            <MudCard Elevation="25">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Invoices Card Three</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="8">
+            <MudCard Elevation="25">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Invoices Card Four</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="4">
+            <MudCard Elevation="25">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Invoices Card Five</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="8">
+            <MudCard Elevation="25">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Invoices Card Four</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" lg="4">
+            <MudCard Elevation="25">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Class="mudcard-title">Invoices Card Five</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                    <MudText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed adipisci voluptas doloribus, deleniti error accusantium assumenda, quod placeat consequatur facilis itaque, quidem maxime. Reiciendis soluta doloribus consectetur! Illo, rerum nesciunt.</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</MudElement>
+
+
+@code{
+  private List<BreadcrumbItem> _items =
+    [
+        new("Home", href: "#"),
+        new("Link 1", href: "#"),
+        new("Link 2", href: null, disabled: true)
+    ];
+}

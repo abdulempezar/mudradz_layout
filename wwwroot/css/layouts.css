@@ -1,0 +1,428 @@
+/*=================================== FONTS ===================================*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/*=================================== FONTS ===================================*/
+
+.customization-drawer{
+    --mud-palette-drawer-background : var(--ezr-card-bgcolor);
+}
+.layouts-selection-button{
+    position: fixed;
+    bottom: 1rem; right: 1rem;
+}
+.layout-togglegroup.mud-toggle-group{
+    --mud-palette-primary-hover : transparent;
+    display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.layout-togglegroup.mud-toggle-group .mud-tooltip-root{flex: 0 0 calc(50% - 0.38rem);}
+.layout-togglegroup.mud-toggle-group .mud-toggle-item{ 
+    position: relative; 
+    padding: 0px;
+    margin: 0px !important;
+    box-shadow: none; border-width: 2px !important; border-style: solid !important; border-color:  var(--ezr-border-color);
+}
+.layout-togglegroup.mud-toggle-group .mud-toggle-item.mud-toggle-item-selected{
+    border-color: var(--ezrprimary);
+    background-color: transparent;
+}
+/*========================== HORIZONTALMENU START =============================*/
+/* .horizontal-navmenu{display: flex; flex-direction: row;}
+.horizontal-navmenu .mud-nav-item{}
+.horizontal-navmenu>.mud-nav-item>.mud-nav-link, .horizontal-navmenu>.mud-nav-group>.mud-nav-link,
+.horizontal-navmenu>.mud-menu-item{
+    font-size:  var(--mud-typography-body1-size);  letter-spacing: 0.10rem;
+    align-items: center; gap: 0.375rem;
+}
+.horizontal-navmenu>.mud-nav-item>.mud-nav-link .mud-nav-link-icon, 
+.horizontal-navmenu>.mud-nav-group>.mud-nav-link .mud-nav-link-icon,
+.horizontal-navmenu>.mud-menu-item .mud-menu-item-icon{
+    font-size: 18px; line-height: normal; color: inherit;
+}
+.horizontal-navmenu .mud-nav-link .mud-nav-link-text,
+.horizontal-navmenu .mud-menu-item .mud-menu-item-text{
+    margin: 0px; letter-spacing: 0.05rem;
+}
+.horizontal-navmenu .mud-nav-item .mud-nav-link.active{background-color: var(--ezrprimary); color: var(--ezronprimary);}
+
+.horizontal-navmenu .mud-nav-group{}
+
+.horizontal-navmenu .mud-nav-group .mud-navgroup-collapse .mud-navmenu{
+    max-height: inherit; overflow-y: auto; padding: 4px 0;}
+.horizontal-navmenu .mud-nav-group .mud-navgroup-collapse .mud-navmenu .mud-nav-link{
+    padding: 8px 16px; font-size: var(--mud-typography-body1-size); color: var(--mud-palette-text-primary);}
+
+@media (min-width: 960px){
+    .horizontal-navmenu>.mud-nav-item>.mud-nav-link, .horizontal-navmenu>.mud-nav-group>.mud-nav-link{
+        color:  var(--ezr-appbar-color);  }
+    
+    .horizontal-navmenu .mud-nav-group .mud-navgroup-collapse{
+        position: absolute;top: var(--ezrappbar-height); background-color: var(--ezr-dropdown-bgcolor);
+        min-width: 200px; border-radius: var(--mud-default-borderradius); box-shadow: var(--mud-elevation-25);
+    }
+    .appbar-nav-collapse .horizontal-navmenu{position: static;}
+    .mud-navmenu .mud-nav-link .mud-nav-link-expand-icon{color: var(--ezr-appbar-color);}
+    .mud-navmenu .mud-nav-link .mud-nav-link-expand-icon.mud-transform{fill: var(--ezr-appbar-color);}
+}
+@media (max-width: 959.98px){
+    .horizontal-navmenu{flex-direction: column;}
+    .horizontal-navmenu .mud-nav-group .mud-navgroup-collapse .mud-navmenu{padding-left: 14px;}
+    .horizontal-navmenu>.mud-nav-item>.mud-nav-link, .horizontal-navmenu>.mud-nav-group>.mud-nav-link{color:  var(--mud-palette-text-primary); }
+    .horizontal-navmenu .mud-nav-item .mud-nav-link.active{background-color: var(--ezrprimary) !important; color: var(--ezronprimary) !important;}
+    .appbar-nav-collapse{
+        position: absolute; left: 0.5rem; top: var(--ezrappbar-height); min-width: 300px; max-width: 100%;
+        max-height: 350px; background-color: var(--ezr-dropdown-bgcolor); border-radius: var(--mud-default-borderradius);
+        box-shadow: var(--mud-elevation-25);}
+    .appbar-nav-collapse .mud-collapse-wrapper-inner{padding: 0.5rem;}
+} */
+/*========================== HORIZONTALMENU END ==============================*/
+
+/*========================== TOP2BOTTOMMENU START ==============================*/
+.top2bottom-navmenu{display: flex; gap: 0.5rem;}
+
+.top2bottom-navmenu .mud-nav-item .mud-nav-link,
+.top2bottom-navmenu .mud-menu .mud-nav-link{
+    font-size:  var(--mud-typography-body1-size);  letter-spacing: 0.10rem; padding: 8px 12px;
+    align-items: center; gap: 0.375rem; color: inherit; width: auto; border-radius: var(--mud-default-borderradius);    
+}
+.top2bottom-navmenu .mud-menu .mud-nav-link .mud-button-label{
+    gap: 0.375rem;
+}
+.top2bottom-navmenu .mud-nav-item>.mud-nav-link:is(.active, :hover),
+.top2bottom-navmenu .mud-menu .mud-nav-link:is(:hover),
+.mud-menu-dropdown .mud-menu-list .mud-nav-item .mud-nav-link:is(.active, :hover){
+    color: var(--ezrprimary);
+/*    color: var(--ezronprimary) !important;
+    background-color: var(--ezrprimary) !important;*/
+}
+.top2bottom-navmenu .mud-nav-item>.mud-nav-link .mud-nav-link-icon,
+.top2bottom-navmenu>.mud-menu .mud-nav-link .mud-nav-link-icon{
+    font-size: 1.15rem; line-height: normal; color: inherit; margin-inline-end: 0px;
+}
+.top2bottom-navmenu .mud-nav-item>.mud-nav-link .mud-nav-link-text,
+.top2bottom-navmenu .mud-menu .mud-nav-link .mud-nav-link-text,
+.mud-menu-dropdown .mud-menu-list .mud-nav-item .mud-nav-link .mud-nav-link-text{
+    margin: 0px; letter-spacing: 0.05rem; white-space: nowrap; line-height: 1;
+}
+.mud-menu-dropdown .mud-menu-list .mud-nav-item .mud-nav-link .mud-nav-link-text {
+    font-size: var(--mud-typography-body1-size);
+}
+.mud-menu-dropdown.mud-popover .mud-menu-list {
+    max-height: 250px;
+}
+
+@media (min-width: 991px){ 
+    .mud-menu-dropdown{
+        top: var(--ezrappbar-height); background-color: var(--ezr-dropdown-bgcolor);
+        min-width: 200px; border-radius: var(--mud-default-borderradius); box-shadow: var(--mud-elevation-25);
+    } 
+}
+@media (max-width: 990.98px){  
+    .top2bottom-navmenu {
+        position: fixed; bottom: 0; left: 0; height: var(--ezrappbar-height); 
+        /* background: var(--bottomnavigationcolor);  */
+        background: var(--ezr-bgappbar-color);
+        width: 100%; padding: 0 0.375rem; overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+    } 
+    .mud-menu-dropdown{
+        background-color: var(--ezr-dropdown-bgcolor); min-width: 200px; border-radius: var(--mud-default-borderradius); 
+        box-shadow: var(--mud-elevation-25); top: auto !important; bottom: calc(var(--ezrappbar-height) - 10px);
+    }
+    .top2bottom-navmenu.mobile-iconview{justify-content: space-around;} 
+    .top2bottom-navmenu.mobile-iconview .mud-nav-item{height: 100%;}
+    .top2bottom-navmenu.mobile-iconview .mud-nav-item .mud-nav-link,
+    .top2bottom-navmenu .mud-menu .mud-nav-link .mud-button-label{
+        flex-direction: column; align-items: center; justify-content: center; font-size: 0.6rem; gap: 0.375rem; 
+        align-self: center; border-radius: 0;
+        height: 100%;
+    } 
+    .top2bottom-navmenu.mobile-iconview .mud-nav-item .mud-nav-link .mud-nav-link-icon,
+    .top2bottom-navmenu.mobile-iconview .mud-menu .mud-nav-link .mud-nav-link-icon,
+    .top2bottom-navmenu .mud-menu .mud-nav-link .mud-button-label .mud-nav-link-icon {
+        margin: 0px;
+        font-size: 1.375rem;
+    }
+    .top2bottom-navmenu .mud-nav-item>.mud-nav-link .mud-nav-link-text,
+    .top2bottom-navmenu .mud-menu .mud-nav-link .mud-nav-link-text,
+    .mud-menu-dropdown .mud-menu-list .mud-nav-item .mud-nav-link .mud-nav-link-text{
+        width: auto;
+    }
+}
+/*========================== TOP2BOTTOMMENU END ==============================*/
+
+/*========================== VERTICALMENU START ==============================*/
+.vertical-navmenu{}
+
+.vertical-navmenu.mud-navmenu{
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.vertical-navmenu.mud-navmenu .mud-menu{
+    width: 100%;
+}
+.vertical-navmenu.mud-navmenu .mud-nav-item,
+.vertical-navmenu.mud-navmenu .mud-menu .mud-nav-item{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+.vertical-navmenu.mud-navmenu .mud-nav-item .mud-nav-link,
+.vertical-navmenu.mud-navmenu .mud-menu .mud-nav-item .mud-nav-link{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.75rem;
+    transition: all 0.25s linear;
+    box-sizing: border-box;
+}
+/* .vertical-navmenu.mud-navmenu .mud-menu .mud-nav-item .mud-nav-link .mud-button-label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.vertical-navmenu.mud-navmenu .mud-nav-item .mud-nav-link .mud-nav-link-icon,
+.vertical-navmenu.mud-navmenu .mud-menu .mud-nav-item .mud-nav-link .mud-nav-link-icon{
+    font-size: 1.25rem; line-height: 1;
+}
+
+.vertical-navmenu.mud-navmenu .mud-nav-item .mud-nav-link .mud-nav-link-text,
+.vertical-navmenu.mud-navmenu .mud-menu .mud-nav-item .mud-nav-link .mud-nav-link-text{
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05rem; line-height: normal;
+}
+
+.mud-drawer.mud-drawer-mini.mud-drawer--closed .vertical-navmenu.mud-navmenu .mud-nav-item .mud-nav-link .mud-nav-link-text,
+.mud-drawer.mud-drawer-mini.mud-drawer--closed .vertical-navmenu.mud-navmenu .mud-menu .mud-nav-item .mud-nav-link .mud-nav-link-text{
+    display: none;
+}
+/*============================ VERTICALMENU END ==============================*/
+/*======================== LAYOUT VARIANT ONE START ===========================*/
+.mud-layout.layoutvariant-one .searchbox{
+    --ezr-formcontrol-bgcolor: rgba(0, 0, 0, .09); 
+    width: 350px; max-width: 100%;
+}
+.mud-layout.layoutvariant-one .aside-menu.mud-drawer .mud-drawer-header .drawer-brand .drawer-brand-text,
+.mud-layout.layoutvariant-one .appbar-header.mud-appbar .appbar-pageheading .appbar-brand .appbar-brand-text{
+    font-size: 0.85rem;
+}
+.mud-layout.layoutvariant-one .appbar-header.mud-appbar .appbar-pageheading .appbar-brand .appbar-brand-image{
+    height: 24px;
+}
+/*========================= LAYOUT VARIANT ONE END ============================*/
+
+/*========================= LAYOUT VARIANT TWO START ==========================*/
+.mud-layout.layoutvariant-two .searchbox{
+    /* --ezr-formcontrol-bgcolor: rgba(0, 0, 0, .09);  */
+    width: 350px; max-width: 100%;
+}
+/*========================= LAYOUT VARIANT TWO END ============================*/
+
+/*======================= LAYOUT VARIANT THREE START ==========================*/
+.mud-layout.layoutvariant-three{}
+.mud-layout.layoutvariant-three:not(:has(.mud-appbar)) .mud-main-content{padding-top: 0px;} 
+.minidrawer-menu{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+.minidrawer-menu .bi::before{vertical-align: top;}
+.mud-layout.layoutvariant-three .aside-menu.mud-drawer.mud-drawer-mini.mud-drawer--closed .aside-navmenu.mud-navmenu .mud-nav-group>.mud-navgroup-collapse{
+    top: 0px;
+    height: 100% !important;
+}
+.mud-layout.layoutvariant-three .aside-menu .mud-drawer-auth{
+    --mud-palette-divider : rgba(255,255,255,0.2);
+    border-top: 1px solid var(--mud-palette-divider);
+}
+.drawer-dropdown{min-width: 200px;}
+.mud-layout.layoutvariant-three .aside-menu .mud-drawer-auth .account-user .account-title{line-height: 1; letter-spacing: .0175em;}
+.mud-layout.layoutvariant-three .aside-menu .mud-drawer-auth .mud-icon-button{width: 40px; height: 40px;}
+.mud-layout.layoutvariant-three .aside-menu.mud-drawer--closed .mud-drawer-auth{justify-content: center; gap: 0.5rem; padding-block-start: 0.5rem; padding-block-end: 0.5rem;}
+    .mud-layout.layoutvariant-three .aside-menu.mud-drawer--open .mud-drawer-auth .account-user{flex: 1; gap: 0.5rem; padding: 0.5rem;}
+    .mud-layout.layoutvariant-three .aside-menu.mud-drawer--closed .mud-drawer-auth .account-user{justify-content: center;}
+    .mud-layout.layoutvariant-three .aside-menu.mud-drawer--closed .mud-drawer-auth .account-user .account-user-inner{display: none;}
+@media (min-width: 961px){
+    
+}
+@media (max-width: 960px){
+.mud-layout.layoutvariant-three:not(:has(.mud-appbar)) .mud-main-content{margin-left: 0px;}
+
+}
+/*======================== LAYOUT VARIANT THREE END============================*/
+
+/*======================== LAYOUT VARIANT FOUR START ==========================*/
+.mud-layout.layoutvariant-four{ 
+    --topareaspacing : var(--ezrappbar-height);
+}
+ 
+.mud-layout.layoutvariant-four .toparea:has(.pageheading)~.mud-main-content{
+    padding-top: 0px;  margin-top: calc(-1 * var(--topareaspacing));}
+.mud-layout.layoutvariant-four .toparea{min-height: var(--ezrappbar-height);}
+.mud-layout.layoutvariant-four .toparea:has(.pageheading){padding-bottom: calc(var(--topareaspacing) - 1rem); }
+.mud-layout.layoutvariant-four .toparea .appbar-header.mud-appbar-fixed-top~.pageheading{
+padding-top: calc(var(--ezrappbar-height) + 1rem);}
+.pageheading{padding: 1rem;}
+.pageheading .page-title{color: var(--ezronprimary); font-weight: bold; letter-spacing: 0.10rem;}
+.pageheading .page-subtitle{ color: var(--ezronprimary); font-weight: 400; letter-spacing: 0.05rem;}
+.pageheading .mud-button{
+    --mud-palette-surface : var(--ezronprimary);
+}
+.mud-layout.layoutvariant-four .appbar-header{border-color: rgba(255,255,255,0.15);}
+.mud-layout.layoutvariant-four .appbar-header.mud-appbar .account-user .account-user-inner .account-title{color: var(--ezronprimary);}
+.mud-layout.layoutvariant-four .searchbar{
+    --ezr-formcontrol-bgcolor: rgba(255, 255, 255, 1);  
+    --mud-palette-lines-inputs: transparent;
+    --mud-palette-action-default: var(--ezr-appbar-color);
+    width: 100%;
+}
+.mud-layout.layoutvariant-four .searchbar .mud-input.mud-input-outlined:is(:focus-within, :hover)>.mud-input-outlined-border,
+.mud-layout.layoutvariant-four .searchbar .mud-input-outlined-border{border-width: 0px !important;}
+.mud-layout.layoutvariant-four .searchbar .mud-input>input.mud-input-root{line-height: 20px;}
+.mud-layout.layoutvariant-four .searchbar .mud-icon-button{position: absolute; top: 50%; right: 14px; transform: translateY(-50%); z-index: 1;}
+@media (max-width: 767.98px){
+    .mud-layout.layoutvariant-four .mud-main-content{padding-bottom: var(--ezrappbar-height);}
+}
+/*========================= LAYOUT VARIANT FOUR END============================*/
+
+/*======================= LAYOUT VARIANT FIVE START ===========================*/
+.mud-layout.layoutvariant-five{
+    --ezrtoolbar-height : 56px; 
+    --mud-internal-toolbar-height : 56px;
+}
+.mud-layout.layoutvariant-five .appbar-header:not(.mud-appbar-fixed-top) ~ .mud-main-content{ padding-top: 0px; }
+.mud-layout.layoutvariant-five .toolbar.mud-toolbar{--ezr-bgappbar-color : var(--ezr-card-bgcolor); }
+.mud-layout.layoutvariant-five .appbar-header{
+    --ezr-bgappbar-color : #1A2232; --ezr-appbar-color : #B8BCCC;
+}
+.mud-layout.layoutvariant-five .appbar-pageheading .appbar-brand-text{color: var(--ezr-appbar-color);white-space: nowrap;}
+.mud-layout.layoutvariant-five .searchbox{
+    --ezr-formcontrol-bgcolor: rgba(255, 255, 255, 1); 
+    width: 100%; max-width: 100%;
+}
+.mud-layout.layoutvariant-five .toolbar {
+    padding-block: 0; --ezrtoolbar-height: 54px; --mud-internal-toolbar-height : 54px;
+}
+ 
+ 
+
+ @media (min-width: 960px){ 
+    .mud-layout.layoutvariant-five .mud-appbar-fixed-top ~ .toolbar{position: sticky;top: var(--ezrappbar-height);} 
+   
+ }
+ 
+ @media (max-width: 991.98px) {
+    .mud-layout.layoutvariant-five .appbar-header.mud-appbar .appbar-pageheading {
+        display: block !important;
+    }
+    .mud-layout.layoutvariant-five .appbar-header.mud-appbar .appbar-pageheading .appbar-brand-text{display: none;}
+    .mud-layout.layoutvariant-five .appbar-header.mud-appbar .appbar-right{padding-inline-start: 0px;}
+}
+ @media (max-width: 959.98px){  
+    .mud-layout.layoutvariant-five .mud-appbar-fixed-top ~ .toolbar{position: sticky;top: var(--ezrappbar-height);}
+ }
+/*========================= LAYOUT VARIANT FIVE END============================*/
+
+
+/*======================== LAYOUT VARIANT SIX START===========================*/ 
+
+.mud-layout.layoutvariant-six .aside-menu{}
+.mud-layout.layoutvariant-six .aside-menu.mud-drawer {border-right: 1px solid var(--mud-palette-divider);}
+.mud-layout.layoutvariant-six .aside-menu.mud-drawer .mud-drawer-header{border-bottom: 1px solid var(--mud-palette-divider);}
+.mud-layout.layoutvariant-six .aside-menu.mud-drawer .mud-drawer-header .drawer-brand .drawer-brand-icon{width: 44px; height: 44px;}
+.mud-layout.layoutvariant-six .aside-menu.mud-drawer-mini.mud-drawer--closed .mud-drawer-header .drawer-brand .drawer-brand-text{display: none;}
+
+.mud-layout.layoutvariant-six .aside-menu .aside-navmenu{
+    --mud-default-borderradius : 0px; gap: 0.15rem;
+}
+.mud-layout.layoutvariant-six .aside-menu .aside-navmenu .mud-nav-item{}
+.mud-layout.layoutvariant-six .aside-menu .aside-navmenu .mud-nav-item .mud-nav-link,
+.mud-layout.layoutvariant-six .aside-menu .aside-navmenu .mud-menu .mud-nav-link{
+    border-left-width: 2px; border-style: solid; border-color: transparent; padding: 1rem;
+}
+.mud-layout.layoutvariant-six .aside-menu .aside-navmenu .mud-nav-item .mud-nav-link:is(:hover, :focus, .active),
+.mud-layout.layoutvariant-six .aside-menu .aside-navmenu .mud-menu .mud-nav-link:is(:hover, :focus, .mud-expanded){
+    color: var(--mud-palette-primary);
+    --mud-ripple-color: var(--mud-palette-primary);
+    background-color: var(--mud-palette-primary-hover);
+    border-color: var(--mud-palette-primary);
+}
+.mud-layout.layoutvariant-six .aside-menu .aside-navmenu .mud-nav-item .mud-nav-link:is(:hover, :focus, .active) .mud-nav-link-icon,
+.mud-layout.layoutvariant-six .aside-menu .aside-navmenu .mud-menu .mud-nav-link:is(:hover, :focus, .mud-expanded) .mud-nav-link-icon{
+    color: var(--mud-palette-primary);
+}
+.mud-layout.layoutvariant-six .searchbox{
+    width: 350px; max-width: 100%;
+}
+
+
+@media (min-width: 960px){
+    .mud-layout.layoutvariant-six .appbar-header.mud-appbar .appbar-pageheading{display: flex;}
+}
+@media (max-width: 959.98px){}
+/*========================= LAYOUT VARIANT SIX END============================*/
+
+/*======================== LAYOUT VARIANT SEVEN START==========================*/
+
+.mud-layout.layoutvariant-seven:has(.mud-appbar) .mud-main-content{padding-top: 0px;}
+ 
+
+.mud-layout.layoutvariant-seven .appbar-header.mud-appbar .appbar-pageheading .appbar-brand .appbar-brand-text{color: var(--ezr-appbar-color);font-size: 0.8rem;}
+.mud-layout.layoutvariant-seven .toolbar.mud-toolbar{--ezr-bgappbar-color : var(--ezr-card-bgcolor); }
+.mud-layout.layoutvariant-seven .appbar-header:is(.mud-appbar-fixed-top)~.toolbar.mud-toolbar{padding-top: calc(var(--mud-appbar-height) + 0.5rem);}
+.mud-layout.layoutvariant-seven .appbar-header.mud-appbar .account-user .account-user-inner .account-subtitle{
+    color: var(--mud-palette-gray-light);
+}
+.mud-layout.layoutvariant-seven .mud-toolbar{--ezrtoolbar-height : 56px; --mud-internal-toolbar-height : 56px ;} 
+.mud-layout.layoutvariant-seven .toolbar.mud-toolbar .appbar-pageheading{
+    display: flex; align-items: flex-start; justify-content: center; flex-direction: column; gap: 0.375rem; height: 100%;
+}
+.mud-layout.layoutvariant-seven .toolbar.mud-toolbar .appbar-pagetitle{
+    margin: 0; font-size: var(--ezr-typo-h6-size); font-weight: 700; line-height: 1; letter-spacing: var(--ezr-letterspacing-small)
+}
+
+.mud-layout.layoutvariant-seven .toolbar.mud-toolbar .appbar-pageheading .mud-breadcrumbs{
+    padding: 0; line-height: 1;
+}
+.mud-layout.layoutvariant-seven .toolbar.mud-toolbar .appbar-pageheading .mud-breadcrumbs .mud-breadcrumb-item:not(.mud-disabled) a{
+    color: var(--ezrprimary); font-weight: 500;
+}
+.mud-layout.layoutvariant-seven .toolbar.mud-toolbar .appbar-pageheading .mud-breadcrumbs .mud-breadcrumb-item a:hover{
+    text-decoration: underline;
+}
+
+
+.mud-layout.layoutvariant-seven .top2bottom-navmenu .mud-nav-item>.mud-nav-link:is(.active, :hover), 
+.mud-layout.layoutvariant-seven .top2bottom-navmenu .mud-menu .mud-nav-link:is(:hover), 
+.mud-layout.layoutvariant-seven .mud-menu-dropdown .mud-menu-list .mud-nav-item .mud-nav-link:is(.active, :hover){
+    --mud-palette-primary-hover: rgba(var(--ezrprimary-rgb), 0.7);
+    --mud-palette-action-default-hover:  rgba(var(--ezrprimary-rgb), 0.7);
+    --mud-palette-primary: var(--ezr-appbar-color);
+    color: var(--ezr-appbar-color);
+}
+@media (min-width: 960px){}
+@media (max-width: 991.98px) {
+    .mud-layout.layoutvariant-seven .appbar-header.mud-appbar .appbar-pageheading {display: flex;}
+}
+/*======================== LAYOUT VARIANT SEVEN END ===========================*/
+
+/*======================= LAYOUT VARIANT EIGHT START ==========================*/
+.mud-layout.layoutvariant-eight{} 
+.mud-layout.layoutvariant-eight .appbar-header.mud-appbar .mud-toolbar-appbar{padding: 0px;}
+.mud-layout.layoutvariant-eight .appbar-header .appbar-pageheading{
+    width: var(--mud-drawer-width-mini-left);
+    border-right: 1px solid rgb(255 255 255 / 30%);
+    border-bottom: 1px solid rgb(255 255 255 / 30%);
+    /* height: calc(100% + 1rem); */
+    justify-content: center;
+    align-items: center;
+    /* left: -0.5rem; */
+    position: relative;
+}
+
+/*======================== LAYOUT VARIANT EIGHT END ===========================*/
+
+
+/*======================== LAYOUT VARIANT NINE START ==========================*/
+.mud-layout.layoutvariant-nine{}
+  
+/*========================= LAYOUT VARIANT NINE END============================*/

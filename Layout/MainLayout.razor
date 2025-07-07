@@ -1,0 +1,307 @@
+﻿@inherits LayoutComponentBase 
+@inject HttpClient Http
+
+<MudThemeProvider  @bind-IsDarkMode="@_isDarkMode" Theme="Ezrtheme" />
+<MudPopoverProvider />
+<MudDialogProvider   />
+<MudSnackbarProvider/>
+
+@{
+    if (layouts == "layoutone") { 
+        Ezrtheme.PaletteLight.Primary = "#001af1";
+        Ezrtheme.PaletteDark.Primary = "#001af1";
+
+        Ezrtheme.PaletteLight.AppbarBackground = "#FFFFFF";
+        Ezrtheme.PaletteLight.AppbarText = "#3a3a3a";
+ 
+
+    } else if (layouts == "layouttwo") {
+        Ezrtheme.PaletteLight.Primary = "#001af1";
+        Ezrtheme.PaletteDark.Primary = "#001af1";
+
+        Ezrtheme.PaletteLight.AppbarBackground = "#FFFFFF";
+        Ezrtheme.PaletteLight.AppbarText = "#3a3a3a";
+
+    } else if (layouts == "layoutthree") {
+        @* --mud-drawer-width-mini-left *@
+        Ezrtheme.LayoutProperties.DrawerMiniWidthLeft = "72px";
+        
+    } else if (layouts == "layoutfour") {
+        Ezrtheme.PaletteLight.AppbarText = "#9C9FAA";
+        Ezrtheme.PaletteDark.AppbarText = "#9C9FAA";
+        Ezrtheme.PaletteLight.AppbarBackground = "#0D153A";
+        
+    } else if (layouts == "layoutfive") {
+        Ezrtheme.PaletteLight.AppbarBackground = "#1A2232";
+        Ezrtheme.PaletteLight.AppbarText = "#B8BCCC";
+    } else if (layouts == "layoutsix") {
+        
+        
+        Ezrtheme.PaletteLight.Primary = "#464eb8";
+        Ezrtheme.PaletteDark.Primary = "#464eb8";
+
+        Ezrtheme.PaletteLight.Background = "#FAFAFA";
+
+        Ezrtheme.PaletteLight.AppbarBackground = "#E1E7EC";
+        Ezrtheme.PaletteLight.AppbarText = "#3C4D65";
+
+        Ezrtheme.PaletteLight.DrawerBackground = "#E1E7EC";
+        Ezrtheme.PaletteLight.DrawerText = "#3C4D65";
+        Ezrtheme.PaletteLight.DrawerIcon = "#3C4D65";
+        
+    } else if (layouts == "layoutseven") {
+        
+        
+        Ezrtheme.PaletteLight.Primary = "#2F4858";
+        Ezrtheme.PaletteDark.Primary = "#37759d";
+
+        Ezrtheme.PaletteLight.AppbarBackground = "#426276";
+        Ezrtheme.PaletteLight.AppbarText = "#FFFFFF";
+        
+    } else if (layouts == "layouteight") {
+        Ezrtheme.PaletteLight.Primary = "#0057ff";
+        Ezrtheme.PaletteDark.Primary = "#0057ff";
+
+        Ezrtheme.PaletteLight.AppbarBackground = "#0057ff"; 
+        Ezrtheme.PaletteLight.AppbarText = "#FFFFFF";
+
+        Ezrtheme.PaletteLight.Background = "#f8f9f9"; 
+
+        Ezrtheme.PaletteLight.DrawerBackground = "#FFFFFF";
+        Ezrtheme.PaletteLight.DrawerText = "#75828f";
+        Ezrtheme.PaletteLight.DrawerIcon = "#75828f";
+
+        Ezrtheme.ZIndex.AppBar = 1500;
+
+    }
+}
+<MudLayout Class="@LayoutCssClass">
+    @if (layouts == "layoutone"){
+        <VariantOne @bind-IsDarkMode="_isDarkMode" />
+    } else if (layouts == "layouttwo"){
+        <VariantTwo @bind-IsDarkMode="_isDarkMode" />
+    } else if (layouts == "layoutthree"){
+        <VariantThree @bind-IsDarkMode="_isDarkMode" />
+    } else if (layouts == "layoutfour"){
+        <VariantFour @bind-IsDarkMode="_isDarkMode" />
+    } else if (layouts == "layoutfive"){
+        <VariantFive @bind-IsDarkMode="_isDarkMode" />
+    } else if (layouts == "layoutsix"){
+        <VariantSix @bind-IsDarkMode="_isDarkMode" />
+    } else if (layouts == "layoutseven"){
+        <VariantSeven @bind-IsDarkMode="_isDarkMode" />
+    } else if (layouts == "layouteight"){
+        <VariantEight @bind-IsDarkMode="_isDarkMode" />
+    } 
+    <MudMainContent>
+        @Body    
+    </MudMainContent>
+    <MudFab Class="layouts-selection-button" Color="Color.Primary" StartIcon="@Icons.Material.Outlined.Settings" OnClick="@((e) => _drawerSettings = !_drawerSettings)" />
+    <MudDrawer @bind-Open="_drawerSettings" Elevation="0" Variant="@DrawerVariant.Temporary" Breakpoint="Breakpoint.Sm" Anchor="Anchor.End" Class="customization-drawer">
+        <MudDrawerHeader class="border-b border-dashed  mud-border-secondary">
+            <MudText Typo="Typo.h6" class="mud-drawer-header-title">Layout Variant</MudText>
+        </MudDrawerHeader>
+        <MudDrawerContainer Class="mud-drawer-body pa-3">
+            <MudToggleGroup T="string" @bind-Value="layouts" Class="layout-togglegroup" 
+            Outlined="false" Delimiters="false" Dense="true" Rounded="false" 
+            SelectionMode="SelectionMode.SingleSelection"  FixedContent="false" > 
+                @if (layoutList is not null)
+                {
+                    @foreach (var item  in layoutList)
+                    {
+                        <MudTooltip Text="@item.Tooltip" Arrow="true" Placement="Placement.Top">
+                            <MudToggleItem Value="@item.Key">
+                                <MudStack Row="false" Spacing="1">
+                                    <MudImage Src="@item.Image" ObjectFit="ObjectFit.Contain" Fluid="true" />
+                                    <MudPaper Class="py-1">
+                                    <MudText Align="Align.Center" Typo="Typo.subtitle2">@item.Tooltip</MudText>
+                                    </MudPaper>
+                                </MudStack>
+                            </MudToggleItem>
+                           
+                        </MudTooltip>
+                    }
+                }
+            </MudToggleGroup>  
+        </MudDrawerContainer>
+    </MudDrawer>
+</MudLayout>
+ 
+@code{
+
+@* -----MODE----- *@
+bool _isDarkMode;
+
+@* -----DRAWER----- *@ 
+bool _drawerSettings = false;
+
+@* -----LAYOUTS----- *@
+private string LayoutCssClass => layoutList?.FirstOrDefault(x => x.Key == layouts)?.LayoutClass ?? string.Empty;
+public class LayoutModel
+{
+    public string Key { get; set; }
+    public string Tooltip { get; set; }
+    public string Image { get; set; }
+    public string LayoutClass { get; set; }
+}
+
+private string layouts = "layouteight";
+private List<LayoutModel> layoutList;
+
+protected override async Task OnInitializedAsync()
+{
+    layoutList = await Http.GetFromJsonAsync<List<LayoutModel>>("sample-data/layouts.json");
+    layouts ??= layoutList?.FirstOrDefault()?.Key;
+}
+
+
+@* -----THEME PALETTE----- *@
+MudTheme Ezrtheme = new MudTheme()
+{
+    PaletteLight = new PaletteLight()
+    {
+        Primary = "#001af1",
+        PrimaryContrastText = "#ffffff", 
+
+        PrimaryLighten = "#f9fcff",
+
+        Secondary = "#5b5a67",
+        SecondaryContrastText = "#ffffff",
+
+        Tertiary = "#7d1ec8",
+        TertiaryContrastText = "#ffffff",
+
+        Info = "#2196f3",
+        InfoContrastText = "#ffffff",
+
+        Success = "#06BA6E",
+        SuccessContrastText = "#ffffff",
+
+        Error = "#dc3545",
+        ErrorContrastText = "#ffffff",
+
+        Warning = "#ff9800",
+        WarningContrastText = "#ffffff",
+
+        Dark = "#1e2939",
+        DarkContrastText = "#ffffff", 
+
+        BackgroundGray = "#f5f5f5",
+        Background = "#ecebf2",
+        Surface = "#FFFFFF",
+
+        LinesDefault = "#dcdcdc",
+        LinesInputs = "#dcdcdc",
+        Divider = "#dcdde0",
+
+        TextPrimary = "#3a3a3a",
+        TextSecondary = "#b3b5b9",
+
+        AppbarBackground = "#FFFFFF",
+        AppbarText = "#47464a",
+
+        DrawerBackground = "#FFFFFF",
+        DrawerText = "#525b75",
+        DrawerIcon = "#525b75",
+        
+        TableStriped = "#fafafa",
+        TableHover = "#f9f9f9",
+        TableLines = "#cfcfcf",
+
+        GrayDefault = "#888888",
+        GrayLight = "#d1d1d1",
+        GrayLighter = "#eeeeee",
+        GrayDark = "#4f4f4f",
+        GrayDarker = "#3d3d3d",
+    },
+    PaletteDark = new PaletteDark()
+    {
+        Primary = "#001af1",
+        PrimaryContrastText = "#ffffff",
+
+        Secondary = "#646464",
+        SecondaryContrastText = "#ffffff",
+
+        Tertiary = "#7d1ec8",
+        TertiaryContrastText = "#ffffff",
+
+        Info = "#2196f3",
+        InfoContrastText = "#ffffff",
+
+        Success = "#06BA6E",
+        SuccessContrastText = "#ffffff",
+
+        Error = "#dc3545",
+        ErrorContrastText = "#ffffff",
+
+        Warning = "#ff9800",
+        WarningContrastText = "#ffffff",
+
+        Dark = "#1e2939",
+        DarkContrastText = "#ffffff",
+        
+        BackgroundGray = "#222834",
+        Background = "#0f111a",
+        Surface = "#222834",
+        
+        
+        LinesDefault = "#3f434d",
+        LinesInputs = "#3f434d",
+        Divider = "#3f434d",
+
+        TextPrimary = "#d3d6dc",
+        TextSecondary = "#6d6e70",
+
+        AppbarBackground = "#222834",
+        AppbarText = "#e3e6ed",
+
+        DrawerBackground = "#222834",
+        DrawerText = "#d2d5dd",
+        DrawerIcon = "#d2d5dd",
+
+        TableStriped = "#2a2f37",
+        TableHover = "#1b1c22",
+        
+        GrayDefault = "#9E9E9E",
+        GrayLight = "#BDBDBD",
+        GrayLighter = "#343c47",
+        GrayDark = "#757575",
+        GrayDarker = "#616161",
+        
+    },
+    LayoutProperties = new LayoutProperties(){
+        DefaultBorderRadius = "0.375rem",
+        AppbarHeight = "56px",
+        DrawerWidthLeft = "300px", DrawerWidthRight = "360px",
+        DrawerMiniWidthLeft = "72px", DrawerMiniWidthRight = "72px",
+    },
+    ZIndex = new ZIndex(){
+        Drawer = 1350, AppBar = 1300, Popover = 1300, 
+        Dialog = 1400, Snackbar = 1500, Tooltip = 1600,   
+    },
+    Typography = new Typography(){
+        Default = new DefaultTypography(){
+            FontFamily = new[] { "Roboto", "Arial", "sans-serif" },
+            FontSize = "0.875rem", FontWeight = "500", LineHeight = "1.375",
+        },
+        H1 = new H1Typography(){ FontSize = "3rem", },
+        H2 = new H2Typography(){ FontSize = "2rem", },
+        H3 = new H3Typography(){ FontSize = "1.5rem", },
+        H4 = new H4Typography(){ FontSize = "1.25rem", },
+        H5 = new H5Typography(){ FontSize = "1.125rem", FontWeight = "600", },
+        H6 = new H6Typography(){ FontSize = "1rem", FontWeight = "600", },
+        Subtitle1 = new Subtitle1Typography(){ FontSize = "0.8rem", LineHeight = "1.375", },
+        Subtitle2 = new Subtitle2Typography(){ FontSize = "0.75rem", LineHeight = "1.275", },
+        Body1 = new Body1Typography(){ FontSize = "0.8rem", FontWeight = "500", },
+        Body2 = new Body2Typography(){ FontSize = "0.75rem", FontWeight = "500", },
+        Caption = new CaptionTypography(){ FontSize = "0.7rem", FontWeight = "500", },
+		Overline = new OverlineTypography(){ FontSize = "0.7rem", FontWeight = "400", TextTransform = "Uppercase", },
+        Button = new MudBlazor.ButtonTypography(){
+            FontSize = " 0.8rem", TextTransform = "capitalize", LetterSpacing = "0.05rem", FontWeight = "500",
+        },
+    }      
+};
+
+
+ 
+}

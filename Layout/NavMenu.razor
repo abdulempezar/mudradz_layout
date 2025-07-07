@@ -1,0 +1,45 @@
+﻿    <MudNavMenu  class="aside-navmenu" Color="Color.Primary" Margin="Margin.None" Rounded="true">
+        <MudTooltip Text="Dashboard" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="bi bi-grid-3x3">Dashboard</MudNavLink>
+        </MudTooltip>
+        <MudTooltip Text="Invoices" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/servers" Icon="bi bi-table">Invoices</MudNavLink>
+        </MudTooltip>
+        <MudTooltip Text="Charts" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/billing" Icon="bi bi-bar-chart">Charts</MudNavLink>
+        </MudTooltip>
+        <MudTooltip Text="Calendar" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/about" Icon="bi bi-calendar">Calendar</MudNavLink>
+        </MudTooltip>
+        <MudNavGroup Title="Master" Icon="bi bi-list-check" Expanded='@(_activeGroup == "Master")' @onclick='() => ToggleGroup("Master")'>
+            <MudNavLink Href="/one">One Menu</MudNavLink>
+            <MudNavLink Href="/two">Two Menu</MudNavLink>
+            <MudNavLink Href="/three">Three Menu</MudNavLink>
+            <MudNavLink Href="/four">Four Menu</MudNavLink>
+            <MudNavLink Href="/five">Five Menu</MudNavLink>
+            <MudNavLink Href="/six">Six Menu</MudNavLink>
+            <MudNavLink Href="/seven">Seven Menu</MudNavLink>
+        </MudNavGroup>
+        <MudNavGroup Title="Reports" Icon="bi bi-database" Expanded='@(_activeGroup == "Reports")' @onclick='() => ToggleGroup("Reports")'> 
+            <MudNavLink Href="/one">One Menu</MudNavLink>
+            <MudNavLink Href="/two">Two Menu</MudNavLink>
+            <MudNavLink Href="/three">Three Menu</MudNavLink>
+            <MudNavLink Href="/four">Four Menu</MudNavLink>
+            <MudNavLink Href="/five">Five Menu</MudNavLink>
+            <MudNavLink Href="/six">Six Menu</MudNavLink>
+            <MudNavLink Href="/seven">Seven Menu</MudNavLink>
+        </MudNavGroup>
+    </MudNavMenu>
+
+@code {
+    [Parameter] public bool IsMenuOpen { get; set; }
+    private string _activeGroup;
+
+    private void ToggleGroup(string groupName)
+    {
+        if (_activeGroup == groupName)
+            _activeGroup = null; // Collapse if already open
+        else
+            _activeGroup = groupName;
+    } 
+}

@@ -1,0 +1,72 @@
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
+    <MudFab class="minidrawer-menu rounded" StartIcon="bi bi-list" Size="Size.Small"  Edge="Edge.End" Color="Color.Primary" OnClick="@((e) => _drawerOpen = !_drawerOpen)" />
+</MudHidden>
+<MudDrawer Color="Color.Dark" @bind-Open="_drawerOpen" Elevation="0" Breakpoint="Breakpoint.Lg" Variant="DrawerVariant.Mini" OpenMiniOnHover="true" ClipMode="DrawerClipMode.Never" Class="aside-menu">
+    <MudDrawerHeader>
+        <MudElement HtmlTag="div" Class="drawer-brand">
+            <MudElement HtmlTag="div" Class="drawer-brand-image">
+                <MudImage ObjectFit="ObjectFit.Contain" Src="img/logo.png" Alt="" />
+            </MudElement>
+            <MudElement HtmlTag="div" Class="drawer-brand-icon">
+                <MudImage ObjectFit="ObjectFit.Contain" Src="img/icon.png" Alt="" />
+            </MudElement>
+            <MudDivider Vertical="true" FlexItem="true" /> 
+            <MudText Typo="Typo.h6" class="drawer-brand-text">EZR Digital <br/>Layouts</MudText>
+        </MudElement>
+    </MudDrawerHeader>
+    <MudDrawerContainer Class="mud-drawer-body">
+        <NavMenu />
+    </MudDrawerContainer> 
+    <MudStack Wrap="Wrap.Wrap" Spacing="0" Row="true" AlignItems="MudBlazor.AlignItems.Center" Class="mud-drawer-auth">
+        <MudDivider Vertical="false" />
+        <MudToggleIconButton  Variant="MudBlazor.Variant.Text" Icon="@Icons.Material.TwoTone.LightMode" Color="Color.Inherit" Toggled="@IsDarkMode"
+        ToggledChanged="SetDarkTheme" ToggledIcon="@Icons.Material.TwoTone.DarkMode" ToggledColor="Color.Inherit"></MudToggleIconButton> 
+        <MudDivider Vertical="true" />
+        <MudMenu class="account-user" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.BottomLeft" LockScroll='false' FullWidth="false" DropShadow="true" PopoverClass="drawer-dropdown">
+            <ActivatorContent>
+                <MudAvatar Color="Color.Secondary" Rounded="true"><MudText Typo="Typo.body1">DK</MudText></MudAvatar>
+                <MudElement HtmlTag="div" Class="account-user-inner">
+                    <MudText Typo="Typo.caption" class="account-subtitle">Welcome</MudText>
+                    <MudText Typo="Typo.h6" class="account-title">Dominic Keller</MudText>
+                </MudElement>
+            </ActivatorContent>
+            <ChildContent>
+                <MudMenuItem Icon="@Icons.Material.Outlined.Person">Profile</MudMenuItem>
+                <MudMenuItem Icon="@Icons.Material.Outlined.AccountBox">Account</MudMenuItem>
+                <MudDivider />
+                <MudMenuItem Icon="@Icons.Material.Outlined.Logout" Href="/Login">Logout</MudMenuItem>
+            </ChildContent>
+        </MudMenu>
+    </MudStack>
+</MudDrawer>
+ 
+@code { 
+
+string value = null;
+
+@* -----MODE----- *@    
+[Parameter]
+public bool IsDarkMode { get; set; }
+
+[Parameter]
+public EventCallback<bool> IsDarkModeChanged { get; set; }
+
+private async Task SetDarkTheme(bool value)
+{
+    IsDarkMode = value;
+    await IsDarkModeChanged.InvokeAsync(value);
+}
+
+ 
+
+@* -----DRAWER----- *@
+bool _drawerOpen = false;
+void DrawerToggle() { 
+    _drawerOpen = !_drawerOpen;  
+}
+
+
+
+
+
+}

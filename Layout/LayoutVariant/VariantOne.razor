@@ -1,0 +1,86 @@
+<MudAppBar Elevation="0" Color="Color.Default" Class="appbar-header">
+    <MudIconButton class="appbar-menu" Icon="bi bi-list" Size="Size.Small" Edge="Edge.End" Color="Color.Inherit" OnClick="@((e) => _drawerOpen = !_drawerOpen)" />
+    <MudElement HtmlTag="div" Class="appbar-pageheading">
+        <MudElement HtmlTag="a" href="/dashboard" Class="appbar-brand">
+            <MudElement HtmlTag="div" Class="appbar-brand-image">
+                <MudImage ObjectFit="ObjectFit.Contain" Src="img/logo.png" Alt="" />
+            </MudElement>
+            <MudDivider Vertical="true" FlexItem="true" />
+            <MudText Typo="Typo.h6" class="appbar-brand-text">Empezar Digital <br/>Layouts</MudText>
+        </MudElement>
+    </MudElement> 
+    <MudSpacer />
+    <MudElement HtmlTag="div" Class="searchbox">
+        <MudTextField @bind-Value="value" Variant="MudBlazor.Variant.Outlined" Margin="Margin.Dense" Placeholder="Search here" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Outlined.Search" InnerPadding="false"></MudTextField>
+    </MudElement>
+    <MudElement HtmlTag="div" Class="appbar-right">
+        <MudIconButton DisableElevation="true" Variant="MudBlazor.Variant.Text" Icon="@Icons.Material.TwoTone.Notifications" Color="Color.Inherit"></MudIconButton>
+        <MudToggleIconButton  Variant="MudBlazor.Variant.Text" Icon="@Icons.Material.TwoTone.LightMode" Color="Color.Inherit" Toggled="@IsDarkMode"
+        ToggledChanged="SetDarkTheme" 
+        ToggledIcon="@Icons.Material.TwoTone.DarkMode" ToggledColor="Color.Inherit" />
+ 
+
+        <MudMenu class="account-user" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight" LockScroll='false' FullWidth="false" DropShadow="true" PopoverClass="appbar-dropdown">
+            <ActivatorContent>
+                <MudAvatar Color="Color.Secondary" Rounded="true"><MudText Typo="Typo.body1">DK</MudText></MudAvatar>
+                <MudElement HtmlTag="div" Class="account-user-inner">
+                    <MudText Typo="Typo.caption" class="account-subtitle">Welcome</MudText>
+                    <MudText Typo="Typo.subtitle2" class="account-title">Dominic Keller</MudText>
+                </MudElement>
+            </ActivatorContent>
+            <ChildContent>
+                <MudMenuItem Icon="@Icons.Material.Outlined.Person">Profile</MudMenuItem>
+                <MudMenuItem Icon="@Icons.Material.Outlined.AccountBox">Account</MudMenuItem>
+                <MudDivider />
+                <MudMenuItem Icon="@Icons.Material.Outlined.Logout" Href="/Login">Logout</MudMenuItem>
+            </ChildContent>
+        </MudMenu>
+    </MudElement>
+</MudAppBar>
+<MudDrawer Color="Color.Default" @bind-Open="_drawerOpen" Elevation="0" Breakpoint="Breakpoint.Md" Variant="DrawerVariant.Temporary" Class="aside-menu">
+    <MudDrawerHeader>
+        <MudElement HtmlTag="div" Class="drawer-brand">
+            <MudElement HtmlTag="div" Class="drawer-brand-image">
+                <MudImage ObjectFit="ObjectFit.Contain" Src="img/logo.png" Alt="" />
+            </MudElement> 
+            <MudAvatar Color="Color.Primary" Rounded="true" Class="drawer-brand-icon pa-2" Style="@($"background: linear-gradient(90deg,rgba(6, 128, 169, 1) 0%, rgba(108, 79, 161, 1) 34%, rgba(140, 44, 145, 1) 69%, rgba(171, 50, 116, 1) 100%);")">
+                <MudImage ObjectFit="ObjectFit.Contain" Src="img/iconwhite.png" Alt="" />
+            </MudAvatar> 
+            <MudDivider Vertical="true" FlexItem="true" /> 
+            <MudText Typo="Typo.h6" class="drawer-brand-text">Empezar Digital <br/>Layouts</MudText>
+        </MudElement>
+    </MudDrawerHeader>
+    <MudDrawerContainer Class="mud-drawer-body">
+        <NavMenu />
+    </MudDrawerContainer>
+</MudDrawer>
+ 
+@code { 
+string value = null!;
+
+@* -----MODE----- *@    
+[Parameter]
+public bool IsDarkMode { get; set; }
+
+[Parameter]
+public EventCallback<bool> IsDarkModeChanged { get; set; }
+
+private async Task SetDarkTheme(bool value)
+{
+    IsDarkMode = value;
+    await IsDarkModeChanged.InvokeAsync(value);
+}
+ 
+
+
+@* -----DRAWER----- *@
+bool _drawerOpen = false;
+void DrawerToggle() { 
+    _drawerOpen = !_drawerOpen;  
+}
+
+
+
+
+
+}

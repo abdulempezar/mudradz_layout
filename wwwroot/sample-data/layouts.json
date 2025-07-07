@@ -1,0 +1,10 @@
+﻿[
+  { "key": "layoutone", "tooltip": "Layout One", "layoutClass" : "layoutvariant-one", "image": "img/layouts/layout-default.svg" },
+  { "key": "layouttwo", "tooltip": "Layout Two", "layoutClass" : "layoutvariant-two", "image": "img/layouts/layout-header.svg" },
+  { "key": "layoutthree", "tooltip": "Layout Three", "layoutClass" : "layoutvariant-three", "image": "img/layouts/layout-default.svg" },
+  { "key": "layoutfour", "tooltip": "Layout Four", "layoutClass" : "layoutvariant-four", "image": "img/layouts/layout-header.svg" },
+  { "key": "layoutfive", "tooltip": "Layout Five", "layoutClass" : "layoutvariant-five", "image": "img/layouts/layout-default.svg" },
+  { "key": "layoutsix", "tooltip": "Layout Six", "layoutClass" : "layoutvariant-six", "image": "img/layouts/layout-default.svg" },
+  { "key": "layoutseven", "tooltip": "Layout Seven", "layoutClass" : "layoutvariant-seven", "image": "img/layouts/layout-default.svg" },
+  { "key": "layouteight", "tooltip": "Layout Eight", "layoutClass" : "layoutvariant-eight", "image": "img/layouts/layout-default.svg" }
+]

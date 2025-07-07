@@ -1,0 +1,83 @@
+@using MudBlazor.Services 
+@inject IBrowserViewportService BrowserViewportService
+
+<MudPaper Square="true" Elevation="0" Class="toparea"
+
+Style="@($"background:{Colors.BlueGray.Darken4};")"
+>
+    @if (_showSearch)
+    {
+        <MudAppBar Elevation="0" Class="appbar-header border-b bg-transparent" Fixed="false" ToolBarClass="pa-2">
+            <MudStack Row="true" Spacing="0" Class="searchbar">
+            <MudTextField @bind-Value="value" Placeholder="placeholder" Class="searchbar-field" FullWidth="true" Variant="MudBlazor.Variant.Outlined" 
+            Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search"  AutoFocus="true" />
+            <MudIconButton Icon="@Icons.Material.Filled.Clear" OnClick="ClearSearch" Color="Color.Surface" Size="Size.Small" />
+            </MudStack>
+        </MudAppBar>
+    } else {
+        <MudAppBar Elevation="0" Class="appbar-header border-b bg-transparent" Fixed="false">
+            @* <MudHidden Breakpoint="Breakpoint.MdAndUp">
+                <MudIconButton class="appbar-menu" Icon="bi bi-list" Size="Size.Small" Edge="Edge.End" Color="Color.Inherit" OnClick="ToggleMenu" />
+            </MudHidden> *@
+            <MudAvatar Color="Color.Primary" Rounded="true" Class="appbar-brand pa-2">
+                <MudImage ObjectFit="ObjectFit.Contain" Src="img/iconwhite.png" Alt="" />
+            </MudAvatar> 
+            <HorizontalNavMenu /> 
+            <MudSpacer />
+            
+            <MudElement HtmlTag="div" Class="appbar-right">
+                <MudIconButton DisableElevation="true" Variant="MudBlazor.Variant.Text" Icon="@Icons.Material.Outlined.Search" Color="Color.Inherit" OnClick="ToggleSearch"></MudIconButton>
+                <MudIconButton DisableElevation="true" Variant="MudBlazor.Variant.Text" Icon="@Icons.Material.TwoTone.Notifications" Color="Color.Inherit"></MudIconButton>
+                <MudToggleIconButton  Variant="MudBlazor.Variant.Text" Icon="@Icons.Material.TwoTone.LightMode" Color="Color.Inherit" Toggled="@IsDarkMode"
+                ToggledChanged="SetDarkTheme" 
+                ToggledIcon="@Icons.Material.TwoTone.DarkMode" ToggledColor="Color.Inherit" />
+
+                <MudMenu class="account-user" AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight" LockScroll='false' FullWidth="false" DropShadow="true" PopoverClass="appbar-dropdown">
+                    <ActivatorContent>
+                        <MudAvatar Color="Color.Secondary" Rounded="true"><MudText Typo="Typo.body1">DK</MudText></MudAvatar>
+                        <MudElement HtmlTag="div" Class="account-user-inner">
+                            <MudText Typo="Typo.caption" class="account-subtitle">Welcome</MudText>
+                            <MudText Typo="Typo.subtitle2" class="account-title">Dominic Keller</MudText>
+                        </MudElement>
+                    </ActivatorContent>
+                    <ChildContent>
+                        <MudMenuItem Icon="@Icons.Material.Outlined.Person">Profile</MudMenuItem>
+                        <MudMenuItem Icon="@Icons.Material.Outlined.AccountBox">Account</MudMenuItem>
+                        <MudDivider />
+                        <MudMenuItem Icon="@Icons.Material.Outlined.Logout" Href="/Login">Logout</MudMenuItem>
+                    </ChildContent>
+                </MudMenu>
+            </MudElement>
+        </MudAppBar>
+    }
+    <SectionOutlet SectionName="TopArea" />
+</MudPaper>  
+ 
+@code {  
+
+@* -----SEARCHBAR----- *@  
+private bool _showSearch = false;
+private string value = string.Empty;
+
+private void ToggleSearch()
+{
+    _showSearch = !_showSearch;
+    if (!_showSearch)
+    { value = string.Empty; }
+}
+private void ClearSearch(){ value = string.Empty; _showSearch = false; }
+
+@* -----MODE----- *@    
+[Parameter]
+public bool IsDarkMode { get; set; }
+
+[Parameter]
+public EventCallback<bool> IsDarkModeChanged { get; set; }
+
+private async Task SetDarkTheme(bool value)
+{
+    IsDarkMode = value;
+    await IsDarkModeChanged.InvokeAsync(value);
+}
+  
+}

@@ -1,0 +1,34 @@
+﻿ 
+<MudNavMenu Class="top2bottom-navmenu mobile-iconview" Color="Color.Primary">
+    <MudTooltip Text="Dashboard" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="bi bi-grid-3x3">Dashboard</MudNavLink>
+    </MudTooltip>
+     <MudTooltip Text="Invoices" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+        <MudNavLink Href="/servers" Icon="bi bi-table">Invoices</MudNavLink>
+    </MudTooltip>
+    <MudTooltip Text="Charts" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+        <MudNavLink Href="/billing" Icon="bi bi-bar-chart">Charts</MudNavLink>
+    </MudTooltip>
+    <MudTooltip Text="Calendar" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+        <MudNavLink Href="/about" Icon="bi bi-calendar">Calendar</MudNavLink>
+    </MudTooltip>
+    <MudMenu AnchorOrigin="Origin.BottomRight" TransformOrigin="Origin.TopRight" LockScroll='false' Modal="true" FullWidth="false" DropShadow="true" PopoverClass="mud-menu-dropdown">
+        <ActivatorContent>
+            <MudButton StartIcon="bi bi-database" Class="mud-nav-link" IconClass="mud-nav-link-icon">
+                <MudElement HtmlTag="div" Class="mud-nav-link-text">Master</MudElement>
+            </MudButton>
+        </ActivatorContent>
+        <ChildContent>
+            <MudNavLink Href="/home">One Menu</MudNavLink>
+            <MudNavLink Href="/two">Two Menu</MudNavLink>
+            <MudNavLink Href="/three">Three Menu</MudNavLink>
+            <MudNavLink Href="/four">Four Menu</MudNavLink>
+            <MudNavLink Href="/five">Five Menu</MudNavLink>
+            <MudNavLink Href="/six">Six Menu</MudNavLink>
+            <MudNavLink Href="/seven">Seven Menu</MudNavLink> 
+        </ChildContent> 
+    </MudMenu> 
+</MudNavMenu>
+@code { 
+
+}

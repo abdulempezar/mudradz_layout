@@ -1,0 +1,60 @@
+﻿    <MudNavMenu  class="vertical-navmenu" Color="Color.Primary" Margin="Margin.None" Rounded="true">
+        <MudTooltip Text="Dashboard" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="bi bi-grid-3x3">Dashboard</MudNavLink>
+        </MudTooltip>
+        <MudTooltip Text="Invoices" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/servers" Icon="bi bi-table">Invoices</MudNavLink>
+        </MudTooltip>
+        <MudTooltip Text="Charts" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/billing" Icon="bi bi-bar-chart">Charts</MudNavLink>
+        </MudTooltip>
+        <MudTooltip Text="Calendar" Arrow="true" Placement="Placement.Top" Color="Color.Default">
+            <MudNavLink Href="/about" Icon="bi bi-calendar">Calendar</MudNavLink>
+        </MudTooltip>
+        <MudMenu AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter" 
+        LockScroll='false' Modal="false" FullWidth="false" DropShadow="true" 
+        PopoverClass="mud-menu-dropdown">
+            <ActivatorContent>
+                <MudNavLink Href="javascript:void(0)" Icon="bi bi-database">Master</MudNavLink>
+            </ActivatorContent>
+            <ChildContent>
+                <MudNavLink Href="/home">One Menu</MudNavLink>
+                <MudNavLink Href="/two">Two Menu</MudNavLink>
+                <MudNavLink Href="/three">Three Menu</MudNavLink>
+                <MudNavLink Href="/four">Four Menu</MudNavLink>
+                <MudNavLink Href="/five">Five Menu</MudNavLink>
+                <MudNavLink Href="/six">Six Menu</MudNavLink>
+                <MudNavLink Href="/seven">Seven Menu</MudNavLink> 
+            </ChildContent> 
+        </MudMenu> 
+
+        <MudMenu AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopCenter" 
+        LockScroll='false' Modal="false" FullWidth="false" DropShadow="true" 
+        PopoverClass="mud-menu-dropdown">
+            <ActivatorContent>
+                <MudNavLink Href="javascript:void(0)" Icon="bi bi-database">Report</MudNavLink>
+            </ActivatorContent>
+            <ChildContent>
+                <MudNavLink Href="/home">One Menu</MudNavLink>
+                <MudNavLink Href="/two">Two Menu</MudNavLink>
+                <MudNavLink Href="/three">Three Menu</MudNavLink>
+                <MudNavLink Href="/four">Four Menu</MudNavLink>
+                <MudNavLink Href="/five">Five Menu</MudNavLink>
+                <MudNavLink Href="/six">Six Menu</MudNavLink>
+                <MudNavLink Href="/seven">Seven Menu</MudNavLink> 
+            </ChildContent> 
+        </MudMenu> 
+    </MudNavMenu>
+
+@code {
+    [Parameter] public bool IsMenuOpen { get; set; }
+    private string _activeGroup;
+
+    private void ToggleGroup(string groupName)
+    {
+        if (_activeGroup == groupName)
+            _activeGroup = null; // Collapse if already open
+        else
+            _activeGroup = groupName;
+    } 
+}
