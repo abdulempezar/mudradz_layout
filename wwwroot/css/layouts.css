@@ -410,8 +410,8 @@ padding-top: calc(var(--ezrappbar-height) + 1rem);}
 .mud-layout.layoutvariant-eight .appbar-header.mud-appbar .mud-toolbar-appbar{padding: 0px;}
 .mud-layout.layoutvariant-eight .appbar-header .appbar-pageheading{
     width: var(--mud-drawer-width-mini-left);
-    border-right: 1px solid rgb(255 255 255 / 30%);
-    border-bottom: 1px solid rgb(255 255 255 / 30%);
+    border-right: 1px solid rgba(255, 255, 255, .2);
+    /* border-bottom: 1px solid var(--ezr-cardborder-color); */
     /* height: calc(100% + 1rem); */
     justify-content: center;
     align-items: center;

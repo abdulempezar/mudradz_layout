@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\mudradz_layout.props" />
+</Project>
